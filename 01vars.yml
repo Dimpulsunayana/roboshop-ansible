@@ -1,5 +1,5 @@
 - name: print from frontend
-  hosts: {{HOST_NAME}}
+  hosts: "{{HOST_NAME}}"
   connection: local
   roles:
-    - {{ROLL_NAME}}
+    - "{{ROLL_NAME}}"
