@@ -1,0 +1,7 @@
+#ansible-playbook -i 172.31.12.65, roboshop.yml -e ROLL_NAME=frontend -e HOST_NAME=all
+- name: roboshop setup
+  hosts: all
+  connection: local
+  become: yes
+  roles:
+    - "{{ROLL_NAME}}"

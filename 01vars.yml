@@ -1,6 +1,0 @@
-#ansible-playbook -i 172.31.12.65, 01vars.yml -e ROLL_NAME=frontend -e HOST_NAME=all
-- name: print from frontend
-  hosts: "{{HOST_NAME}}"
-  connection: local
-  roles:
-    - "{{ROLL_NAME}}"
