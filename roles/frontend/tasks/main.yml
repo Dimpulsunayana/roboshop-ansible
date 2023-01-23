@@ -19,5 +19,11 @@
     path: /usr/share/nginx/html/
     state: directory
 
+- name: Unarchive a  roboshop-frontend file
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    dest: /tmp/frontend.zip
+    remote_src: yes
+
 
 
