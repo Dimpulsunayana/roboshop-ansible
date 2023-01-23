@@ -26,20 +26,20 @@
     dest: /app
     remote_src: yes
 
-- name: Copy catalogue.service file
-  ansible.builtin.copy:
-    src: catalogue.service
-    dest: /etc/systemd/system/catalogue.service
-
 - name: install nodejs dependencies
   community.general.npm:
     path: /app
     state: latest
 
+- name: Copy catalogue.service file
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
+
 - name: start catalogue service
   ansible.builtin.systemd:
     name: catalogue
-    state: started
+    state: restarted
     daemon_reload: yes
     enabled: yes
 
