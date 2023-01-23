@@ -1,4 +1,5 @@
-#ansible-playbook -i 172.31.12.65, roboshop.yml -e ROLL_NAME=frontend -e HOST_NAME=all
+#ansible-playbook -i front-dev.dimpul.online, roboshop.yml -e ROLL_NAME=frontend -e ansible_user=centos
+#-e ansible_password=DevOps321
 - name: roboshop setup
   hosts: all
   #connection: local
