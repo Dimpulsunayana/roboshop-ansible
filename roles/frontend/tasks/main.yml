@@ -3,6 +3,7 @@
     name: nginx
     state: installed
 
+#This task you can give either at end of the "ansible.builtin.copy" also
 - name: start nginx
   ansible.builtin.systemd:
       name: nginx
