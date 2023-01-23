@@ -23,7 +23,7 @@
 - name: Unarchive a roboshop-catalogue content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
-    dest: /usr/share/nginx/html
+    dest: /app
     remote_src: yes
 
 - name: Copy catalogue.service file
