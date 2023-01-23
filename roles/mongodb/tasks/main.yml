@@ -16,6 +16,6 @@
 
 - name: restart mongodb
   ansible.builtin.systemd:
-    name: mongodb
+    name: mongodb-org
     state: started
     enabled: yes
