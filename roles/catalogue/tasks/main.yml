@@ -1,3 +1,53 @@
-- name: print hello
-  ansible.builtin.debug:
-    msg: Hello from {{ROLL_NAME}}
+- name: install nodejs repos
+  ansible:builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
+- name: install nodejs
+  ansible.builtin.yum:
+    name: nodejs
+    state: installed
+
+- name: Add application user
+  ansible.builtin.user:
+    name: roboshop
+
+- name: remove old directory
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: create directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: Unarchive a roboshop-catalogue content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
+- name: Copy catalogue.service file
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: install nodejs dependencies
+  community.general.npm:
+    path: /app
+    state: latest
+
+- name: start catalogue service
+  ansible.builtin.systemd:
+    name: catalogue
+    state: started
+    daemon-reload: yes
+    enabled: yes
+
+- name: load schema
+  community.mongodb.mongodb_shell:
+    file: "/app/schema/catalogue.js"
+    idempotent: yes
+
+
+
+
