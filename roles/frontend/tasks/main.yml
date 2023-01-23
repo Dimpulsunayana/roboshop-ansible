@@ -1,14 +1,11 @@
-#- name: install nginx
-#  ansible.builtin.yum:
-#    name: nginx
-#    state: installed
-#
-#- name: start nginx
-#  ansible.builtin.systemd:
-#      name: nginx
-#      state: started
-#      enabled: yes
+- name: install nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
 
-- name: print hello
-  ansible.builtin.debug:
-    msg: print {{ROLL_NAME}}
+- name: start nginx
+  ansible.builtin.systemd:
+      name: nginx
+      state: started
+      enabled: yes
+
