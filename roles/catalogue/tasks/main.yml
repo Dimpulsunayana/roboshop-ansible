@@ -39,9 +39,9 @@
 - name: start catalogue service
   ansible.builtin.systemd:
     name: catalogue
-    state: restarted
     daemon_reload: yes
     enabled: yes
+    state: restarted
 
 - name: Copy mongodb file
   ansible.builtin.copy:
