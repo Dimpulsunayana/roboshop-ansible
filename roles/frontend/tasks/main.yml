@@ -22,7 +22,7 @@
 - name: Unarchive a  roboshop-frontend file
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-    dest: /tmp/frontend.zip
+    dest: /usr/share/nginx/html
     remote_src: yes
 
 
