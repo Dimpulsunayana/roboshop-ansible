@@ -9,3 +9,10 @@
       state: started
       enabled: yes
 
+- name: remove old directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html/
+    state: absent
+
+
+
