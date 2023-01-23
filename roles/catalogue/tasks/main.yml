@@ -50,7 +50,7 @@
 
 - name: install mongodb
   ansible.builtin.yum:
-    name: mongodb-org
+    name: mongodb-org-shell
     state: installed
 
 - name: load schema
