@@ -6,9 +6,9 @@
     src: mysql.repo
     dest: /etc/systemd/system/mysql.service
 
-- name: install mysql
+- name: Install MySQL Server
   ansible.builtin.yum:
-    name: mysql-server
+    name: mysql-community-server
     state: installed
 
 - name: start mysql
