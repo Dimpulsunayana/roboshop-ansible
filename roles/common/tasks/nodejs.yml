@@ -20,11 +20,11 @@
       path: /app
       state: directory
 
-- name: Download content
+- name: Download {{component}} content
   ansible.builtin.unarchive:
-  src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
-  dest: /app
-  remote_src: yes
+   src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
+   dest: /app
+   remote_src: yes
 
 - name: install nodejs dependencies
   community.general.npm:
