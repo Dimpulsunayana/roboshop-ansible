@@ -37,7 +37,6 @@
     src: user.service
     dest: /etc/systemd/system/user.service
 
-
 - name: start user service
   ansible.builtin.systemd:
     name: user
