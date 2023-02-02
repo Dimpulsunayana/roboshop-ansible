@@ -28,8 +28,8 @@
 
 - name: install nodejs dependencies
   community.general.npm:
-  path: /app
-  state: latest
+   path: /app
+   state: latest
 
 - name: Copy {{component}}.service file
   ansible.builtin.copy:
