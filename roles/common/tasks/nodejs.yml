@@ -31,7 +31,6 @@
   path: /app
   state: latest
 
-
 - name: Copy {{component}}.service file
   ansible.builtin.copy:
       src: "{{catalogue}}.service"
