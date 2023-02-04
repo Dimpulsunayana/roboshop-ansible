@@ -9,6 +9,7 @@
     name:
      - erlang
      - rabbitmq-server
+    autoremove: true
     state: installed
 
 - name: start rabbitmq service
