@@ -8,7 +8,8 @@
 
 - name: maven build
   ansible.builtin.shell: mvn clean package
-  chdir: /app
+  args:
+   chdir: /app
 
 - name: systemd setup
   ansible.builtin.include_tasks: "systemd.yml"
