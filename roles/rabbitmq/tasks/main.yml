@@ -6,8 +6,7 @@
 
 - name: remove erlang
   ansible.builtin.yum:
-    name:
-      - erlang
+    name: erlang-erts-22.0.7-1.el8.x86_64
     state: removed
 
 - name: install erlang & rabbitMQ
