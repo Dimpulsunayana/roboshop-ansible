@@ -8,7 +8,7 @@
   ansible.builtin.yum:
     name:
       - erlang
-    state: remove
+    state: removed
 
 - name: install erlang & rabbitMQ
   ansible.builtin.yum:
