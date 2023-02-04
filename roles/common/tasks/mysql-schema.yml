@@ -7,7 +7,7 @@
 
 - name: Load mysql schema
   community.mysql.mysql_db:
-    state: import
+    state: present
     name: all
     target: /app/schema/{{component}}.sql
     login_host: mysql-dev.dimpul.online
