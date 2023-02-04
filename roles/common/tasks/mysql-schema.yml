@@ -11,5 +11,5 @@
     name: all
     target: /app/schema/{{component}}.sql
     login_host: mysql-dev.dimpul.online
-    login_user: "root"
+    login_user: root
     login_password: "{{ root_mysql_password }}"
