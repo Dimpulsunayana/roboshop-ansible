@@ -31,7 +31,6 @@
     src: http://{{nexus_user}}:{{nexus_user}}@172.31.12.68:8081/repository/${component}/${component}-${app_version}.zip
     dest: /usr/share/nginx/html
     remote_src: yes
-
   vars:
     nexus_user: "{{ lookup('aws_ssm', 'nexus_user', region='us-east-1' ) }}"
     nexus_pass: "{{ lookup('aws_ssm', 'nexus_pass', region='us-east-1' ) }}"
