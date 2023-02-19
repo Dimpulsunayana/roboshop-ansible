@@ -29,7 +29,7 @@
 - name: Download {{component}} content
   ansible.builtin.unarchive:
     src: http://{{nexus_user}}:{{nexus_user}}@172.31.12.68:8081/repository/${component}/${component}-${app_version}.zip
-    dest: /usr/share/nginx/html/
+    dest: /usr/share/nginx/html
     remote_src: yes
 
   vars:
