@@ -25,5 +25,5 @@
     remote_src: yes
 
   vars:
-    nexus_user: {{ lookup('aws_ssm', "nexus_user", region='us-east-1' ) }}
-    nexus_pass: {{ lookup('aws_ssm', "nexus_pass", region='us-east-1' ) }}
+    nexus_user: "{{ lookup('aws_ssm', 'nexus_user', region='us-east-1' ) }}"
+    nexus_pass: "{{ lookup('aws_ssm', 'nexus_pass', region='us-east-1' ) }}"
